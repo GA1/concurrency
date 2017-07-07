@@ -5,7 +5,7 @@ import java.util.List;
 public class BlockingQueue {
 
 	private int maxSize;
-	private List<Integer> items = new LinkedList<>();
+	private List<Integer> items = new LinkedList();
 	
 	public BlockingQueue(int maxSize) { 
 		this.maxSize = maxSize;
@@ -31,7 +31,7 @@ public class BlockingQueue {
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
-		BlockingQueue bq = new BlockingQueue(2);
+		final BlockingQueue bq = new BlockingQueue(2);
 		Runnable firstRunnable = new Runnable() {
 			public void run() {
 				System.out.println("START FIRST");

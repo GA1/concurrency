@@ -27,9 +27,8 @@ public class ReentrantLock {
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		ReentrantLock reentrantLock = new ReentrantLock();
+		final ReentrantLock reentrantLock = new ReentrantLock();
 		Runnable firstRunnable = new Runnable() {
-			@Override
 			public void run() {
 				System.out.println("START FIRST");
 				try {
@@ -45,7 +44,6 @@ public class ReentrantLock {
 			}
 		};
 		Runnable secondRunnable = new Runnable() {
-			@Override
 			public void run() {
 				System.out.println("START SECOND");
 				try {

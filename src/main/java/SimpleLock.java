@@ -17,9 +17,8 @@ public class SimpleLock {
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		SimpleLock simpleLock = new SimpleLock();
+		final SimpleLock simpleLock = new SimpleLock();
 		Runnable firstRunnable = new Runnable() {
-			@Override
 			public void run() {
 				System.out.println("START FIRST");
 				try {
@@ -32,7 +31,6 @@ public class SimpleLock {
 			}
 		};
 		Runnable secondRunnable = new Runnable() {
-			@Override
 			public void run() {
 				System.out.println("START SECOND");
 				try {
